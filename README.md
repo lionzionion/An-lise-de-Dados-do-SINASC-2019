@@ -33,10 +33,9 @@ plt.xlabel('Idade')
 plt.show()
 
 Histograma do Peso do Bebê
+
 Aqui, é gerado um histograma do peso do bebê.
 
-python
-Copy code
 # Código para histograma do peso do bebê
 import pandas as pd
 import requests
