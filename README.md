@@ -43,16 +43,6 @@ import requests
 from io import BytesIO
 import matplotlib.pyplot as plt
 
-# URL do arquivo CSV
-url_csv = "https://diaad.s3.sa-east-1.amazonaws.com/sinasc/SINASC_2019.csv"
-
-# Baixar o arquivo CSV
-response = requests.get(url_csv)
-csv_data = BytesIO(response.content)
-
-# Carregar os dados usando o pandas
-sinasc_data = pd.read_csv(csv_data)
-
 # Histograma do peso do bebê
 plt.figure(figsize=(10, 6))
 plt.hist(sinasc_data['PESO'].dropna(), bins=30, color='lightcoral', edgecolor='black')
