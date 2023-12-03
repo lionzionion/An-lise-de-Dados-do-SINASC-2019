@@ -16,33 +16,39 @@ from io import BytesIO
 import matplotlib.pyplot as plt
 
 # URL do arquivo CSV
+
 url_csv = "https://diaad.s3.sa-east-1.amazonaws.com/sinasc/SINASC_2019.csv"
 
 # Baixar o arquivo CSV
+
 response = requests.get(url_csv)
 csv_data = BytesIO(response.content)
 
 # Carregar os dados usando o pandas
+
 sinasc_data = pd.read_csv(csv_data)
 
 # Boxplot da idade da mãe
+
 plt.figure(figsize=(10, 6))
 plt.boxplot(sinasc_data['IDADEMAE'].dropna(), vert=False)  # Remove valores NaN
 plt.title('Boxplot da Idade da Mãe')
 plt.xlabel('Idade')
 plt.show()
 
-Histograma do Peso do Bebê
+# Histograma do Peso do Bebê
 
-Aqui, é gerado um histograma do peso do bebê.
+# Aqui, é gerado um histograma do peso do bebê.
 
 # Código para histograma do peso do bebê
+
 import pandas as pd
 import requests
 from io import BytesIO
 import matplotlib.pyplot as plt
 
 # Histograma do peso do bebê
+
 plt.figure(figsize=(10, 6))
 plt.hist(sinasc_data['PESO'].dropna(), bins=30, color='lightcoral', edgecolor='black')
 plt.title('Histograma do Peso do Bebê')
